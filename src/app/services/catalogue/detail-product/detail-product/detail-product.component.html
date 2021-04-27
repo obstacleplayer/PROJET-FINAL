@@ -1,0 +1,49 @@
+<div class="detail-position-top">
+  <div class="container">
+    <div class="card" *ngIf="selectProduct">
+      <div class="row">
+        <div class="img-big-wrap">
+          <div>
+            <img src="../../../../../assets/img/{{ selectProduct.source }}" />
+          </div>
+        </div>
+        <aside class="col-sm-7">
+          <article class="card-body p-5">
+            <h3 class="title mb-3">{{ selectProduct.name }}</h3>
+            <p class="price-detail-wrap">
+              <span class="card-title">Prix : </span
+              ><span class="card-title">{{ selectProduct.price }} €</span>
+            </p>
+            <dl class="param param-feature">
+              <dt>Model : {{ selectProduct.category }}</dt>
+            </dl>
+            <hr />
+            <div class="row">
+              <div class="col-sm-7">
+                <span class="float-left">
+                  <span>Size: {{ selectProduct.size }}</span>
+                </span>
+              </div>
+            </div>
+            <hr />
+            <button
+              class="button btn btn-primary"
+              (click)="
+                addClick(
+                  selectProduct.id,
+                  selectProduct.name,
+                  selectProduct.price,
+                  selectProduct.category,
+                  selectProduct.size,
+                  selectProduct.source
+                )
+              "
+            >
+              Add Panier
+            </button>
+          </article>
+        </aside>
+      </div>
+    </div>
+  </div>
+</div>
